@@ -1,0 +1,37 @@
+{
+    "short_name": "rakun.ai",
+    "name": "rakun.ai",
+    "icons": [
+    {
+      "src":"/favicon.png",
+      "type": "image/png"
+    },
+    {
+      "src":"/favicon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src":"/favicon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src":"/favicon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src":"/maskable_favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+   ],
+   "description": "rakun.ai",
+   "start_url": "rakun.ai",
+   "Theme_color": "#000000",
+   "theme_color": "#000000",
+   "background_color": "#000000", 
+   "display": "minimal-ui"
+}
