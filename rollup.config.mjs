@@ -7,9 +7,12 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import { uglify } from 'rollup-plugin-uglify';
-import gzipPlugin from 'rollup-plugin-gzip'
+import gzipPlugin from 'rollup-plugin-gzip';
+import { brotliCompress } from 'zlib';
+import { promisify } from 'util';
 
 const production = !process.env.ROLLUP_WATCH;
+const brotliPromise = promisify(brotliCompress);
 
 function serve() {
 	let server;
@@ -110,6 +113,9 @@ export default {
 			  reduce_vars: true,
 			}
 		}),
-		gzipPlugin()
+		gzipPlugin({
+			customCompression: content => brotliPromise(Buffer.from(content)),
+			fileName: '.br',
+		  })
 	],
 };
